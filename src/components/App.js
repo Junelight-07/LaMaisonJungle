@@ -185,6 +185,9 @@ function ShoppingList() {
           <>
             <li className="listeElement" key={`${name}-${index}`}>
               <div>
+                <div>
+                  {name} : {price} €
+                </div>
                 <div>{isBestSale && <span> Meilleure vente 🔥</span>}</div>
               </div>
               <div>
