@@ -1,8 +1,6 @@
 import "../style.css";
 import logo from "../assets/leaf.png";
 
-import logo from "../assets/leaf.png";
-
 function Banner() {
   const title = "La maison jungle";
   return (
@@ -143,30 +141,30 @@ const plantList = [
   },
 ];
 
-function ShoppingList() {
-  const categories = plantList.reduce(
-    (acc, plant) =>
-      acc.includes(plant.category) ? acc : acc.concat(plant.category),
-    []
-  );
-  return (
-    <>
-      <h2 className="panier">Panier :</h2>
-      <ul>
-        {categories.map((cat) => (
-          <li key={cat}>{cat}</li>
-        ))}
-      </ul>
-      <ul>
-        {plantList.map(({ name, price }, index) => (
-          <li className="listeElement" key={`${name}-${index}`}>
-            {name} : {price} ${name.isBestSale ? "" : <span>🔥</span>}
-          </li>
-        ))}
-      </ul>
-    </>
-  );
-}
+// function ShoppingList() {
+//   const categories = plantList.reduce(
+//     (acc, plant) =>
+//       acc.includes(plant.category) ? acc : acc.concat(plant.category),
+//     []
+//   );
+//   return (
+//     <>
+//       <h2 className="panier">Panier :</h2>
+//       <ul>
+//         {categories.map((cat) => (
+//           <li key={cat}>{cat}</li>
+//         ))}
+//       </ul>
+//       <ul>
+//         {plantList.map(({ name, price }, index) => (
+//           <li className="listeElement" key={`${name}-${index}`}>
+//             {name} : {price} ${name.isBestSale ? "" : <span>🔥</span>}
+//           </li>
+//         ))}
+//       </ul>
+//     </>
+//   );
+// }
 
 function ShoppingList() {
   const categories = plantList.reduce(
