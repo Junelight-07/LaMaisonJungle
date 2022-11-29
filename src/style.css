@@ -7,13 +7,19 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.lmj-banner {
+header {
   color: black;
   text-align: right;
   padding: 32px;
   border-bottom: solid 3px black;
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.lmj-titrePage {
+  display: flex;
   align-items: center;
 }
 
@@ -26,14 +32,71 @@ body {
   width: 45px;
 }
 
+.contenuPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .panier {
+  display: flex;
   color: blue;
   font-size: xx-large;
 }
 
+.cat-list {
+  list-style-type: disclosure-open;
+}
+
+.plant-list {
+  list-style-type: none;
+  padding: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 696px;
+}
+
 .listeElement {
-  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+  border: solid 2px black;
+  border-radius: 10px;
+  font-size: 14px;
   font-weight: bold;
+}
+
+.lmj-sales {
+  position: absolute;
+  right: 3px;
+  left: 3px;
+  bottom: 10px;
+  font-weight: 500;
+  color: white;
+  padding: 5px 5px;
+  background-color: #31b572;
+  border-radius: 100px;
+}
+
+.lmj-plant-item-cover {
+  height: 220px;
+  width: 220px;
+  border-radius: 20px;
+}
+
+.lmj-plant-item {
+  margin: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  text-transform: capitalize;
 }
 
 /*# sourceMappingURL=style.css.map */
