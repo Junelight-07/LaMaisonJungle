@@ -168,6 +168,42 @@ function ShoppingList() {
   );
 }
 
+function ShoppingList() {
+  const categories = plantList.reduce(
+    (acc, plant) =>
+      acc.includes(plant.category) ? acc : acc.concat(plant.category),
+    []
+  );
+  return (
+    <div className="contenuPage">
+      <h2 className="panier">Panier :</h2>
+      <ul className="cat-list">
+        {categories.map((cat) => (
+          <li key={cat}>{cat}</li>
+        ))}
+      </ul>
+      <ul className="plant-list">
+        {plantList.map(({ name, price, isBestSale, isSpecialOffer }, index) => (
+          <>
+            <li className="listeElement" key={`${name}-${index}`}>
+              <div>
+                <div>{isBestSale && <span> Meilleure vente 🔥</span>}</div>
+              </div>
+              <div>
+                {isSpecialOffer && (
+                  <div>
+                    <div className="lmj-sales">Promotion en cours</div>
+                  </div>
+                )}
+              </div>
+            </li>
+          </>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function App() {
   return (
     <div>
