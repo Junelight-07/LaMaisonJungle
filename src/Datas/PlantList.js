@@ -1,3 +1,5 @@
+import monstera from "../assets/monstera.jpg";
+
 export const plantList = [
   {
     name: "Monstera",
@@ -5,6 +7,9 @@ export const plantList = [
     category: "Classique",
     id: "1ed",
     isBestSale: true,
+    light: 2,
+    water: 3,
+    cover: monstera,
   },
   {
     name: "Ficus lyrata",
@@ -12,6 +17,9 @@ export const plantList = [
     category: "Classique",
     id: "2ab",
     isBestSale: false,
+    light: 2,
+    water: 3,
+    cover: monstera,
   },
   {
     name: "Pothos argenté",
@@ -19,6 +27,9 @@ export const plantList = [
     category: "Classique",
     id: "3sd",
     isBestSale: true,
+    light: 2,
+    water: 3,
+    cover: monstera,
   },
   {
     name: "Yucca",
@@ -26,6 +37,9 @@ export const plantList = [
     category: "Classique",
     id: "4kk",
     isBestSale: true,
+    light: 2,
+    water: 3,
+    cover: monstera,
   },
   {
     name: "Olivier",
@@ -33,6 +47,9 @@ export const plantList = [
     category: "Extérieur",
     id: "5pl",
     isBestSale: false,
+    light: 2,
+    water: 3,
+    cover: monstera,
   },
   {
     name: "Géranium",
@@ -40,6 +57,9 @@ export const plantList = [
     category: "Extérieur",
     id: "6uo",
     isBestSale: false,
+    light: 2,
+    water: 3,
+    cover: monstera,
   },
   {
     name: "Basilique",
@@ -47,6 +67,9 @@ export const plantList = [
     category: "Extérieur",
     id: "7ie",
     isBestSale: false,
+    light: 2,
+    water: 3,
+    cover: monstera,
   },
   {
     name: "Aloe",
@@ -54,6 +77,9 @@ export const plantList = [
     category: "Plante grasse",
     id: "8fp",
     isBestSale: false,
+    light: 2,
+    water: 3,
+    cover: monstera,
   },
   {
     name: "Succulente",
@@ -61,5 +87,8 @@ export const plantList = [
     category: "Plante grasse",
     id: "9vn",
     isBestSale: true,
+    light: 2,
+    water: 3,
+    cover: monstera,
   },
 ];

@@ -1,4 +1,5 @@
 import { plantList } from "../Datas/PlantList";
+import PlantItem from "./PlantItem";
 
 function ShoppingList() {
   const categories = plantList.reduce(
@@ -15,16 +16,35 @@ function ShoppingList() {
         ))}
       </ul>
       <ul className="plant-list">
-        {plantList.map(({ name, price, isBestSale, isSpecialOffer }, index) => (
-          <>
-            <li className="listeElement" key={`${name}-${index}`}>
-              <div>
+        {plantList.map(
+          (
+            {
+              name,
+              price,
+              id,
+              isBestSale,
+              isSpecialOffer,
+              light,
+              water,
+              cover,
+            },
+            index
+          ) => (
+            <>
+              <li className="listeElement" key={`${name}-${index}`}>
                 <div>
-                  {name} : {price} €
+                  <div>
+                    {name} : {price} €
+                  </div>
+                  <PlantItem
+                    id={id}
+                    cover={cover}
+                    name={name}
+                    water={water}
+                    light={light}
+                  />
+                  {isBestSale && <span> Meilleure vente 🔥</span>}
                 </div>
-                <div>{isBestSale && <span> Meilleure vente 🔥</span>}</div>
-              </div>
-              <div>
                 {isSpecialOffer && (
                   <div>
                     <div className="lmj-sales">Promotion en cours</div>
@@ -33,10 +53,10 @@ function ShoppingList() {
                     </div>
                   </div>
                 )}
-              </div>
-            </li>
-          </>
-        ))}
+              </li>
+            </>
+          )
+        )}
       </ul>
     </div>
   );
