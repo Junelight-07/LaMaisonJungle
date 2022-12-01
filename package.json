@@ -9,10 +9,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "sass": "^1.56.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "sass": "sass --watch ./src/sass/main.scss:./src/style.css --style expanded",
+    "sass": "sass --watch ./src/components/main.scss:./src/style.css --style expanded",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

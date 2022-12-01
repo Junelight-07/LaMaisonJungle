@@ -1,17 +1,11 @@
-import logo from "../assets/logo.svg";
+import logo from "../../assets/leaf.png";
 
 function Banner() {
   const title = "La maison jungle";
   return (
     <header>
-      <div
-        style={{
-          alignItems: "center",
-          flexDirection: "column",
-          display: "flex",
-        }}
-      >
-        <div className="lmj-titrePage">
+      <div className="lmj-header-right flex">
+        <div className="lmj">
           <img src={logo} alt="La maison jungle" className="lmj-logo" />
           <h1 className="lmj-title">{title}</h1>
         </div>
@@ -30,47 +24,17 @@ function Recommendation() {
 
   if (isSpring) {
     return (
-      <div
-        style={{
-          display: "flex",
-        }}
-      >
-        C'est le printemps, il est temps de rempoter !
-      </div>
+      <div className="flex">C'est le printemps, il est temps de rempoter !</div>
     );
   }
   if (isSummer) {
-    return (
-      <div
-        style={{
-          display: "flex",
-        }}
-      >
-        Préparez-vous à la récolte !
-      </div>
-    );
+    return <div className="flex">Préparez-vous à la récolte !</div>;
   }
   if (isFall) {
-    return (
-      <div
-        style={{
-          display: "flex",
-        }}
-      >
-        Le froid arrive attention
-      </div>
-    );
+    return <div className="flex">Le froid arrive attention</div>;
   }
   if (isWinter) {
-    return (
-      <div
-        style={{
-          display: "flex",
-        }}
-      >
-        Cachez bien vos plantes du froid
-      </div>
-    );
+    return <div className="flex">Cachez bien vos plantes du froid</div>;
   }
 }
 

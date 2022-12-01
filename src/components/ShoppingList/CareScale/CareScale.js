@@ -1,5 +1,5 @@
-import sun from "../assets/sun.svg";
-import water from "../assets/water.svg";
+import sun from "../../../assets/sun.svg";
+import water from "../../../assets/water.svg";
 
 function CareScale(props) {
   const { scaleValue, careType } = props;
@@ -11,7 +11,7 @@ function CareScale(props) {
       {range.map((rangeElem) =>
         scaleValue >= rangeElem ? (
           <span key={rangeElem.toString()}>
-            <img src={scaleType} />
+            <img src={scaleType} alt="{scaleType}" />
           </span>
         ) : null
       )}

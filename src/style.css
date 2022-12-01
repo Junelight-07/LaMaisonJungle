@@ -7,6 +7,16 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.flex {
+  display: flex;
+}
+
+.contenuPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 header {
   color: black;
   text-align: right;
@@ -16,36 +26,57 @@ header {
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column;
+  width: 100%;
 }
 
-.lmj-titrePage {
+.lmj {
   display: flex;
   align-items: center;
 }
-
+.lmj-header-right {
+  align-items: center;
+  flex-direction: column;
+}
 .lmj-title {
   padding-left: 32px;
 }
-
 .lmj-logo {
   height: 45px;
   width: 45px;
 }
 
-.contenuPage {
+.plant-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  width: 150px;
+  margin: 10px;
+  border: solid 2px black;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.plant-item-cover {
+  height: 120px;
+  width: 100%;
+  object-fit: cover;
+}
+.plant-item-best-sale {
+  background-color: #2D9827;
+  border-radius: 12px/5px;
 }
 
-.panier {
+.is-promotion {
+  color: red;
+  text-decoration: line-through;
+}
+
+.shopping-list {
   display: flex;
-  color: blue;
-  font-size: xx-large;
-}
-
-.cat-list {
-  list-style-type: disclosure-open;
+  flex-direction: column;
 }
 
 .plant-list {
@@ -56,47 +87,10 @@ header {
   max-width: 696px;
 }
 
-.listeElement {
-  display: flex;
+.cat-list {
+  list-style-type: disclosure-open;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  height: 150px;
-  width: 150px;
-  margin: 10px;
-  border: solid 2px black;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.lmj-sales {
-  position: absolute;
-  right: 3px;
-  left: 3px;
-  bottom: 10px;
-  font-weight: 500;
-  color: white;
-  padding: 5px 5px;
-  background-color: #31b572;
-  border-radius: 100px;
-}
-
-.lmj-plant-item-cover {
-  height: 220px;
-  width: 220px;
-  border-radius: 20px;
-}
-
-.lmj-plant-item {
-  margin: 10px;
-  display: flex;
   align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  text-transform: capitalize;
 }
 
 /*# sourceMappingURL=style.css.map */

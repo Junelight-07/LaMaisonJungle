@@ -1,0 +1,25 @@
+.plant-item {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   position: relative;
+   width: 150px;
+   margin: 10px;
+   border: solid 2px black;
+   border-radius: 10px;
+   font-size: 14px;
+   font-weight: bold;
+
+   &-cover {
+      height: 120px;
+      width: 100%;
+      object-fit: cover;
+   }
+
+   &-best-sale {
+      background-color: #2D9827;
+      border-radius: 12px/5px;
+   }
+}
