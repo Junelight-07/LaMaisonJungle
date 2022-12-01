@@ -1,31 +1,30 @@
 header {
-   color: black;
-   text-align: right;
-   padding: 32px;
-   border-bottom: solid 3px black;
    display: flex;
    justify-content: flex-end;
    align-items: flex-end;
    flex-direction: column;
-   width: 100%;
+   width: calc(100% - 64px);
+   padding: 0px 32px 32px;
+   color: black;
+   text-align: right;
+   border-bottom: solid 3px black;
 }
 
-.lmj {
+.brand {
    display: flex;
    align-items: center;
 
-   &-header-right {
-      align-items: center;
-      flex-direction: column;
-   }
-
-   &-title {
+   &--title {
       padding-left: 32px;
 
    }
 
-   &-logo {
+   &--logo {
       height: 45px;
       width: 45px;
    }
+}
+
+.recommendation {
+   display: flex;
 }

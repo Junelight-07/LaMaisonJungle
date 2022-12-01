@@ -1,13 +1,15 @@
-import "../style.css";
+import "./main.scss";
 import Banner from "./Header/Banner";
 import ShoppingList from "./ShoppingList/ShoppingList";
 
 function App() {
   return (
-    <div className="contenuPage">
+    <>
       <Banner />
-      <ShoppingList />
-    </div>
+      <div className="page">
+        <ShoppingList />
+      </div>
+    </>
   );
 }
 

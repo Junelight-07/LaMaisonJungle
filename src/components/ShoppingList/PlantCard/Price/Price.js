@@ -1,3 +1,5 @@
+import styles from "./Price.module.scss";
+
 function Price({ name, price, isSpecialOffer }) {
   if (!isSpecialOffer)
     return (
@@ -7,7 +9,7 @@ function Price({ name, price, isSpecialOffer }) {
     );
   return (
     <>
-      <div className="is-promotion">
+      <div className={styles["is-promotion"]}>
         {name}: {price + " €"}
       </div>
       <div>

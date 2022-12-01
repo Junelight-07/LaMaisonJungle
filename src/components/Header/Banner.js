@@ -1,16 +1,19 @@
 import logo from "../../assets/leaf.png";
+import styles from "./Banner.module.scss";
 
 function Banner() {
   const title = "La maison jungle";
   return (
-    <header>
-      <div className="lmj-header-right flex">
-        <div className="lmj">
-          <img src={logo} alt="La maison jungle" className="lmj-logo" />
-          <h1 className="lmj-title">{title}</h1>
-        </div>
-        <Recommendation />
+    <header className={styles["header"]}>
+      <div className={styles["brand"]}>
+        <img
+          src={logo}
+          alt="La maison jungle"
+          className={styles["brand--logo"]}
+        />
+        <h1 className={styles["brand--title"]}>{title}</h1>
       </div>
+      <Recommendation />
     </header>
   );
 }
@@ -24,17 +27,29 @@ function Recommendation() {
 
   if (isSpring) {
     return (
-      <div className="flex">C'est le printemps, il est temps de rempoter !</div>
+      <div className={styles["recommendation"]}>
+        C'est le printemps, il est temps de rempoter !
+      </div>
     );
   }
   if (isSummer) {
-    return <div className="flex">Préparez-vous à la récolte !</div>;
+    return (
+      <div className={styles["recommendation"]}>
+        Préparez-vous à la récolte !
+      </div>
+    );
   }
   if (isFall) {
-    return <div className="flex">Le froid arrive attention</div>;
+    return (
+      <div className={styles["recommendation"]}>Le froid arrive attention</div>
+    );
   }
   if (isWinter) {
-    return <div className="flex">Cachez bien vos plantes du froid</div>;
+    return (
+      <div className={styles["recommendation"]}>
+        Cachez bien vos plantes du froid
+      </div>
+    );
   }
 }
 

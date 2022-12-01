@@ -1,4 +1,5 @@
-import { plantList } from "../../Datas/PlantList";
+// import classnames from "classnames";
+import { plantList } from "../../data/PlantList";
 import PlantCard from "../ShoppingList/PlantCard/PlantCard";
 import styles from "./ShoppingList.module.scss";
 
@@ -8,14 +9,15 @@ function ShoppingList() {
       acc.includes(plant.category) ? acc : acc.concat(plant.category),
     []
   );
+
   return (
-    <div className={styles.shoppingList}>
-      <ul className="cat-list flex">
+    <div className={styles["shopping-list"]}>
+      <ul className={styles["cat-list"]}>
         {categories.map((cat) => (
           <li key={cat}>{cat}</li>
         ))}
       </ul>
-      <ul className="plant-list flex">
+      <ul className={styles["plant-list"]}>
         {plantList.map((plant) => (
           <PlantCard plant={plant} />
         ))}
