@@ -1,50 +1,37 @@
-import { useEffect, useState } from "react";
 import styles from "./Cart.module.scss";
+import { useState } from "react";
+import useCart from "./useCart";
 
-// function handleClick(plant) {
-//   console.log(`Vous voulez acheter 1 ${plant.name} ? Très bon choix 🌱✨`);
-//   var total = plant.name + " " + plant.price + "€";
-//   console.log(total);
-//   var test = (
-//     <>
-//       <p>Panier</p>
-//       <p>{total}</p>
-//       <p>
-//         {plant.name} {plant.price} €
-//       </p>
-//     </>
-//   );
-// }
+function Cart() {
+  const { plants, getTotalPlants } = useCart();
+  const [isOpen, setIsOpen] = useState(false);
 
-function Cart({ selectedPlant }) {
-  const [selectedPlants, setSelectedPlants] = useState([]);
-
-  useEffect(() => {
-    if (selectedPlant) setSelectedPlants((curr) => [...curr, selectedPlant]);
-  }, [selectedPlant]);
-
-  function getTotal(plants) {
-    let total = 0;
-    for (let index = 0; index < plants.length; index++) {
-      total += plants[index].price;
-    }
-    return <li> Total : {total} € </li>;
-  }
-
-  return (
+  return isOpen ? (
     <div className={styles["Cart"]}>
-      <>
-        <div className={styles["Cart-panier"]}>Panier</div>
-        <ul>
-          {selectedPlants.map((plant) => (
-            <li key={plant.name}>
-              {plant.name} {plant.price} €
-            </li>
-          ))}
-          {getTotal(selectedPlants)}
-        </ul>
-      </>
+      <div className={styles["Cart-panier"]}>Panier</div>
+      <button
+        className={styles["button-closing"]}
+        onClick={() => setIsOpen(false)}
+      >
+        Fermer
+      </button>
+      <ul>
+        {plants.map((plant) => (
+          <li key={plant.name}>
+            {plant.name} {plant.price} €
+          </li>
+        ))}
+        {getTotalPlants()}
+      </ul>
+      {/* <button onClick={() => updateCart(0)}>Vider le panier</button> */}
     </div>
+  ) : (
+    <button
+      className={styles["button-opening"]}
+      onClick={() => setIsOpen(true)}
+    >
+      Ouvrir le Panier
+    </button>
   );
 }
 
