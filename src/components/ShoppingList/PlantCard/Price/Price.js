@@ -8,14 +8,10 @@ function Price({ name, price, isSpecialOffer }) {
       </div>
     );
   return (
-    <>
-      <div className={styles["is-promotion"]}>
-        {name}: {price + " €"}
-      </div>
-      <div>
-        {name} : {price / 2} €
-      </div>
-    </>
+    <div>
+      {name}: <span className={styles["is-promotion"]}>{price + " €"}</span>{" "}
+      {price / 2} €
+    </div>
   );
 }
 
