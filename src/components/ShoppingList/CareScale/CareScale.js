@@ -1,7 +1,7 @@
 import sun from "../../../assets/sun.svg";
 import water from "../../../assets/water.svg";
 
-function CareScale(props) {
+export default function CareScale(props) {
   const { scaleValue, careType } = props;
   const range = [1, 2, 3];
   const scaleType = careType === "light" ? sun : water;
@@ -19,5 +19,3 @@ function CareScale(props) {
     </div>
   );
 }
-
-export default CareScale;

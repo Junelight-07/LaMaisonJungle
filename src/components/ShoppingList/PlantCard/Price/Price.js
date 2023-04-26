@@ -1,18 +1,20 @@
 import styles from "./Price.module.scss";
 
-function Price({ name, price, isSpecialOffer }) {
+export default function Price({ name, price, isSpecialOffer }) {
   if (!isSpecialOffer)
     return (
-      <div>
-        {name}: {price + " €"}
-      </div>
+      <>
+        <span className={styles["price"]}>{price + " €"}</span>{" "}
+        <div>{name}</div>
+      </>
     );
   return (
-    <div>
-      {name}: <span className={styles["is-promotion"]}>{price + " €"}</span>{" "}
-      {price / 2} €
-    </div>
+    <>
+      <span className={styles["price"]}>
+        <span className={styles["is-promotion"]}>{price + " €"}</span>
+        {price / 2} €
+      </span>
+      <div>{name}</div>
+    </>
   );
 }
-
-export default Price;

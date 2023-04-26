@@ -1,7 +1,7 @@
 import logo from "../../assets/leaf.png";
 import styles from "./Banner.module.scss";
 
-function Banner() {
+export default function Banner() {
   const title = "La maison jungle";
   return (
     <header className={styles["header"]}>
@@ -25,32 +25,19 @@ function Recommendation() {
   const isFall = currentMonth >= 8 && currentMonth <= 10; //septembre à novembre
   const isWinter = currentMonth >= 11 || currentMonth <= 1; // décembre à février
 
+  let recommendation;
   if (isSpring) {
-    return (
-      <div className={styles["recommendation"]}>
-        C'est le printemps, il est temps de rempoter !
-      </div>
-    );
+    recommendation = "C'est le printemps, il est temps de rempoter !";
   }
   if (isSummer) {
-    return (
-      <div className={styles["recommendation"]}>
-        Préparez-vous à la récolte !
-      </div>
-    );
+    recommendation = "Préparez-vous à la récolte !";
   }
   if (isFall) {
-    return (
-      <div className={styles["recommendation"]}>Le froid arrive attention</div>
-    );
+    recommendation = "Le froid arrive attention";
   }
   if (isWinter) {
-    return (
-      <div className={styles["recommendation"]}>
-        Cachez bien vos plantes du froid
-      </div>
-    );
+    recommendation = "Cachez bien vos plantes du froid";
   }
-}
 
-export default Banner;
+  return <div className={styles["recommendation"]}>{recommendation}</div>;
+}

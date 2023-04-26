@@ -5,7 +5,7 @@
    justify-content: flex-start;
    text-align: center;
    position: relative;
-   width: 150px;
+   width: 250px;
    margin: 10px;
    padding-bottom: 15px;
    border: solid 2px black;
@@ -14,7 +14,7 @@
    font-weight: bold;
 
    &-cover {
-      height: 120px;
+      height: 250px;
       width: 100%;
       object-fit: cover;
       border-radius: 10px 10px 0px 0px;

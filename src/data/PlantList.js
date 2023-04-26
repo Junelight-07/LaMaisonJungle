@@ -67,7 +67,7 @@ export const plantList = [
   {
     name: "Cactus",
     price: 6,
-    category: "Extérieur",
+    category: "Plante grasse",
     id: "6aa",
     isBestSale: false,
     light: 1,

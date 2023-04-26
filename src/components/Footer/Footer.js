@@ -15,9 +15,10 @@ function Footer() {
   return (
     <footer className={styles["Footer"]}>
       <div className={styles["Footer-elem"]}>
-        Pour les passionné·e·s de plantes 🌿🌱🌵
+        {"Pour les passionné·e·s de plantes 🌿🌱🌵"}
       </div>
-      <div className={styles["Footer-elem"]}>Laissez-nous votre mail :</div>
+
+      <div className={styles["Footer-elem"]}>{"Laissez-nous votre mail :"}</div>
       <input
         placeholder={"alexy@gmail.com"}
         value={inputValue}

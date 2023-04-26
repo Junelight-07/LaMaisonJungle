@@ -1,62 +1,65 @@
 import styles from "./Cart.module.scss";
 import { useState } from "react";
 
-function Cart() {
-  function useCart() {
-    const [purchasedPlants, setpurchasedPlants] = useState([]);
+export default function Cart({ cart, updateCart }) {
+  const [isOpen, setIsOpen] = useState(true);
 
-    function addPlant(plant) {
-      setpurchasedPlants((curr) => [...curr, plant]);
-    }
-
-    function getTotalPlants() {
-      let total = 0;
-      for (let index = 0; index < purchasedPlants.length; index++) {
-        total += purchasedPlants[index].price;
-      }
-
-      if (!purchasedPlants.length) return <li>Votre panier est vide</li>;
-      return <li> Total : {total} € </li>;
-    }
-
-    return {
-      purchasedPlants,
-      addPlant,
-      getTotalPlants,
-    };
-  }
-
-  const { purchasedPlants, getTotalPlants } = useCart();
-  const [isOpen, setIsOpen] = useState(false);
-  // isOpen sert à mettre la valeur par défaut à fermé donc faire apparaitre un bouton pour ouvrir le panier sinon, si bouton cliqué donc panier ouvert, faire apparaitre le panier et le bouton pour fermer
+  const total = cart.reduce(
+    (acc, plant) =>
+      acc +
+      plant.amount * (plant.isSpecialOffer ? plant.promoPrice : plant.price),
+    0
+  );
 
   return isOpen ? (
     <div className={styles["Cart"]}>
-      <div className={styles["Cart-panier"]}>Panier</div>
       <button
         className={styles["button-closing"]}
         onClick={() => setIsOpen(false)}
       >
-        Fermer
+        {"Fermer"}
       </button>
-      <ul>
-        {purchasedPlants.map((plant) => (
-          <li key={plant.name}>
-            {plant.name} {plant.price} €
-          </li>
-        ))}
-        {getTotalPlants()}
-      </ul>
-      {/* <button onClick={() => updateCart(0)}>Vider le panier</button> */}
+      <div className={styles["align-center"]}>
+        <h2 className={styles["Cart-panier"]}>{"Panier"}</h2>
+      </div>
+      {cart.length > 0 ? (
+        <div>
+          <ul>
+            {cart.map(
+              ({ name, price, amount, isSpecialOffer, promoPrice }, index) => {
+                return (
+                  <div key={`${name}-${index}`}>
+                    {name} {isSpecialOffer ? promoPrice : price}
+                    {"€ x"} {amount}
+                  </div>
+                );
+              }
+            )}
+          </ul>
+          <h3>
+            {"Total : "}
+            {total}
+            {"€"}
+          </h3>
+          <div className={styles["align-center"]}>
+            <button
+              className={styles["button-empty"]}
+              onClick={() => updateCart([])}
+            >
+              {"Vider le panier"}
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div>{"Votre panier est vide"}</div>
+      )}
     </div>
   ) : (
     <button
       className={styles["button-opening"]}
       onClick={() => setIsOpen(true)}
     >
-      Ouvrir le Panier
+      {"Ouvrir le Panier"}
     </button>
   );
 }
-
-export default Cart;

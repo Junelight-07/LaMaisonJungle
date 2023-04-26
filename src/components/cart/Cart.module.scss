@@ -1,40 +1,51 @@
 .Cart {
    display: flex;
    flex-direction: column;
-   background-color: #13AB09;
+   background-color: #31b472;
    flex: 2;
    min-width: 300px;
+   color: #FFF;
 
    & ul {
       list-style-type: none;
-      color: #FFF;
    }
 
    &-panier {
       font-weight: bold;
-      color: #FFF;
-
    }
 }
 
 .button {
 
-
    &-opening {
-      background-color: #13ae67;
+      background-color: #31b472;
       min-width: 280px;
       border: none;
       border-radius: 10px;
       margin-left: 10px;
       margin-right: 10px;
+      color: #FFF;
+      height: 30px;
    }
 
    &-closing {
       color: #FFF;
-      background-color: #13ae67;
+      background-color: #31b472;
       border: none;
       max-width: fit-content;
       display: flex;
       align-self: end;
    }
+
+   &-empty {
+      color: #FFF;
+      background-color: #31b472;
+      border: none;
+      display: flex;
+   }
+}
+
+.align-center {
+   justify-content: center;
+   display: flex;
 }
